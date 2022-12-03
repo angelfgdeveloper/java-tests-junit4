@@ -2,7 +2,7 @@ package org.example.payments;
 
 public class PaymentProcessor {
 
-    private  PaymentGateway paymentGateway;
+    private PaymentGateway paymentGateway;
 
     public PaymentProcessor(PaymentGateway paymentGateway) {
         this.paymentGateway = paymentGateway;
