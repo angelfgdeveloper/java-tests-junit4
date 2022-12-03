@@ -16,4 +16,14 @@ public class StringUtil {
         return result;
     }
 
+    public static boolean isEmpty(String str) {
+        if (str.contains("null")) { return true; }
+
+        if (str.trim().length() > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }

@@ -50,4 +50,19 @@ public class StringUtilTest {
         StringUtil.repeat("Hola", -1);
     }
 
+    @Test
+    public void string_is_not_empty() {
+        Assert.assertFalse(StringUtil.isEmpty("Hola, soy un texto"));
+    }
+
+    @Test
+    public void string_is_empty_when_spaces() {
+        Assert.assertTrue(StringUtil.isEmpty("   "));
+    }
+
+    @Test
+    public void string_is_empty_when_is_null() {
+        Assert.assertTrue(StringUtil.isEmpty(" null "));
+    }
+
 }
