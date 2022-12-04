@@ -8,4 +8,5 @@ public interface MovieRepository {
     Movie findById(long id); // Obtener una pelicula por id
     Collection<Movie> findAll(); // Obtiene una lista de todas las peliculas
     void saveOrUpdate(Movie movie); // Guarda o actualiza una pelicula
+    Collection<Movie> findByName(String name);
 }

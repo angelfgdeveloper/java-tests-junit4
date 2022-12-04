@@ -33,7 +33,8 @@ public class MovieServiceShould {
                         new Movie(4, "Super 8", 112, Genre.THRILLER),
                         new Movie(5, "Scream", 111, Genre.HORROR),
                         new Movie(6, "Home Alone", 103, Genre.COMEDY),
-                        new Movie(7, "Matrix", 136, Genre.ACTION)
+                        new Movie(7, "Matrix", 136, Genre.ACTION),
+                        new Movie(8, "Superman", 120, Genre.ACTION)
                 )
         );
 
@@ -65,5 +66,15 @@ public class MovieServiceShould {
     private static List<Integer> getMoviesIds(Collection<Movie> movies) {
         List<Integer> movieIds = movies.stream().map(Movie::getId).collect(Collectors.toList());
         return movieIds;
+    }
+
+    @Test
+    public void get_movies_by_name() {
+        Collection<Movie> movies = movieService.findMoviesByName("SUper");
+
+        assertThat(movies, is(Arrays.asList(
+                new Movie(4, "Super 8", 112, Genre.THRILLER),
+                new Movie(8, "Superman", 120, Genre.ACTION)
+        )));
     }
 }
